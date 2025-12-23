@@ -1,0 +1,133 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    /* top section */
+
+.top-background
+{
+    background-image: url(media/269617.gif);
+    height: 100vh;
+    /* background-size: cover; */
+}
+
+.mason-text {
+	/* box-sizing: border-box; */
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 80vh;
+	font-family: sans-serif;
+    padding: 1rem;
+}
+
+.mason-title
+{
+    font-size: larger;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    animation: fadeIn 5s ease-in forwards;
+}
+
+.mason-heading {
+    font-size: 10vw;
+    text-shadow: 4px 4px 0px navy;
+    color: #232323;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+  
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+  
+    100% {
+        opacity: 1;
+    }
+}
+
+.bubble-container {
+    display: flex;
+    gap: 16px;
+}
+  
+.bubble {
+    padding: 10px 22px;
+    border-radius: 999px; /* membuat super lonjong */
+    font-size: 15px;
+    color: #cbd5e1; /* soft white */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px); /* efek frosted glass */
+    -webkit-backdrop-filter: blur(6px);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+  
+  /* Hover effect (glow halus) */
+.bubble:hover {
+    background: linear-gradient(135deg, rgba(64, 94, 255, 0.45), rgba(140, 60, 255, 0.45));
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(120, 120, 255, 0.25);
+}
+
+.bubble:hover:nth-child(1) { background: linear-gradient(135deg, #fb8a3f33, #fc466b33); }
+.bubble:hover:nth-child(2) { background: linear-gradient(135deg, #8e2de233, #4a00e033); }
+.bubble:hover:nth-child(3) { background: linear-gradient(135deg, #11998e33, #38ef7d33); }
+.bubble:hover:nth-child(4) { background: linear-gradient(135deg, #396afc33, #2948ff33); }
+.bubble:hover:nth-child(5) { background: linear-gradient(135deg, #f9955333, #b9681d33); }
+  
+.floating-arrow {
+    font-size: 28px; 
+    animation: float 1.5s ease-in-out infinite;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    animation: float 1.5s ease-in-out infinite, glow 3s ease-in-out infinite, fadeIn 10s ease-in-out forwards;
+}
+  
+  /* Animasi naik turun arrow */
+@keyframes float {
+    0% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(10px); /* turun sedikit */
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 8px palevioletred; }
+    50% { text-shadow: 0 0 16px lime; }
+}
+
+    /* ______ */
+
+    /* about me section */
+
+.about-me-section
+{
+    background-color: #232323;
+    height: auto;
+    padding: 9rem 2rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.mason
+{
+    border: tomato 2px solid;
+    border-radius: 12px;
+}
