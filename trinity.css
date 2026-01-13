@@ -50,35 +50,26 @@
     }
 }
 
-.bubble-container {
+.social-media-container
+{
     display: flex;
-    gap: 16px;
-}
-  
-.bubble {
-    padding: 10px 22px;
-    border-radius: 999px; /* membuat super lonjong */
-    font-size: 15px;
-    color: #cbd5e1; /* soft white */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(1px); /* efek frosted glass */
-    -webkit-backdrop-filter: blur(6px);
-    cursor: pointer;
-    transition: 0.25s ease;
-}
-  
-  /* Hover effect (glow halus) */
-.bubble:hover {
-    background: linear-gradient(135deg, rgba(64, 94, 255, 0.45), rgba(140, 60, 255, 0.45));
-    transform: translateY(-2px);
-    box-shadow: 0 0 12px rgba(120, 120, 255, 0.25);
+    animation: fadeIn 5s ease-in forwards;
 }
 
-.bubble:hover:nth-child(1) { background: linear-gradient(135deg, #fb8a3f33, #fc466b33); }
-.bubble:hover:nth-child(2) { background: linear-gradient(135deg, #8e2de233, #4a00e033); }
-.bubble:hover:nth-child(3) { background: linear-gradient(135deg, #11998e33, #38ef7d33); }
-.bubble:hover:nth-child(4) { background: linear-gradient(135deg, #396afc33, #2948ff33); }
-.bubble:hover:nth-child(5) { background: linear-gradient(135deg, #f9955333, #b9681d33); }
+.social-media-icon
+{
+    font-size: 42px;
+    color: darkgrey;
+}
+
+.social-media-icon:hover
+{
+    transform: scale(1.2);
+    border: 1px solid lime;
+    border-radius: 90%;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
   
 .floating-arrow {
     font-size: 28px; 
@@ -131,3 +122,101 @@
     border: tomato 2px solid;
     border-radius: 12px;
 }
+
+/* ______ */
+
+    /* scroll section */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+    
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+    /* ______ */
+
+    /* responsive section (pakai ai biar cepat) */
+
+/* mobile */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+      
+        /* Heading besar */
+    .mason-heading {
+        font-size: 16vw;
+        text-align: center;
+    }
+      
+        /* Container utama */
+    .container {
+        padding: 1.5rem;
+    }
+      
+        /* Card jadi vertikal */
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+      
+    .card {
+        width: 100%;
+    }
+      
+        /* Search box */
+    .search-box {
+        width: 100%;
+    }
+      
+        /* Floating arrow */
+    .floating-arrow {
+        bottom: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .mason-heading {
+      font-size: 12vw;
+    }
+  
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+}
+
+/* desktop */
+/* @media (min-width: 1025px) {
+
+    .mason-heading {
+      font-size: 8vw;
+    }
+  
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }   */
