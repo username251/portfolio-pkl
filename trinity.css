@@ -81,16 +81,16 @@
     transform: translateX(-50%);
     text-shadow: 0 0 10px rgba(255,255,255,0.2);
     animation: float 1.5s ease-in-out infinite, glow 3s ease-in-out infinite, fadeIn 10s ease-in-out forwards;
+    z-index: 10;
 }
   
-  /* Animasi naik turun arrow */
 @keyframes float {
     0% {
       transform: translateY(0);
       opacity: 0.7;
     }
     50% {
-      transform: translateY(10px); /* turun sedikit */
+      transform: translateY(10px);
       opacity: 1;
     }
     100% {
@@ -107,6 +107,13 @@
     /* ______ */
 
     /* about me section */
+
+.inner-body
+{
+    display: flex;
+    gap: 1cm;
+}
+
 
 .about-me-section
 {
@@ -149,27 +156,29 @@
 
     /* ______ */
 
-    /* responsive section (pakai ai biar cepat) */
+    /* responsive section */
 
 /* mobile */
 @media (max-width: 768px) {
 
-    body {
+    * {
         overflow-x: hidden;
     }
       
-        /* Heading besar */
     .mason-heading {
-        font-size: 16vw;
+        font-size: 24vw;
         text-align: center;
     }
-      
-        /* Container utama */
-    .container {
-        padding: 1.5rem;
+
+    .mason-title {
+        font-size: 4vw;
+    }
+
+    .inner-body
+    {
+        flex-direction: column;
     }
       
-        /* Card jadi vertikal */
     .card-container {
         display: flex;
         flex-direction: column;
@@ -179,13 +188,12 @@
     .card {
         width: 100%;
     }
-      
-        /* Search box */
-    .search-box {
+
+    .mason
+    {
         width: 100%;
     }
-      
-        /* Floating arrow */
+
     .floating-arrow {
         bottom: 20px;
         width: 42px;
@@ -194,7 +202,7 @@
 }
 
 /* tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* @media (min-width: 769px) and (max-width: 1024px) {
 
     .mason-heading {
       font-size: 12vw;
@@ -205,7 +213,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
-}
+} */
 
 /* desktop */
 /* @media (min-width: 1025px) {
